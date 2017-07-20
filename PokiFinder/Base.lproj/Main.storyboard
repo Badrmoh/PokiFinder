@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PokiFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,97 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vTs-jV-9Ix">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IvH-P5-Qx2">
+                                <rect key="frame" x="16" y="588" width="60" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="JeW-Z2-zbj"/>
+                                    <constraint firstAttribute="width" constant="60" id="e2J-fC-UMS"/>
+                                </constraints>
+                                <state key="normal" image="pokeball"/>
+                                <connections>
+                                    <action selector="addRandPok:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vw4-ry-QdN"/>
+                                </connections>
+                            </button>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u0X-zf-K5a">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="VrD-75-rhu">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o3w-SJ-7j8">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="lZP-gT-jtz">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="light"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vTs-jV-9Ix" secondAttribute="bottom" id="8hh-gw-2Ia"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IvH-P5-Qx2" secondAttribute="bottom" constant="20" id="G0z-f6-FSz"/>
+                            <constraint firstItem="IvH-P5-Qx2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Vsz-iN-jSD"/>
+                            <constraint firstAttribute="trailing" secondItem="vTs-jV-9Ix" secondAttribute="trailing" id="YEZ-bm-Psu"/>
+                            <constraint firstItem="vTs-jV-9Ix" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cp2-Sd-3qZ"/>
+                            <constraint firstItem="vTs-jV-9Ix" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="n3e-M9-cmm"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blurView" destination="u0X-zf-K5a" id="ue1-le-TZw"/>
+                        <outlet property="mapView" destination="vTs-jV-9Ix" id="QGX-Wo-oAk"/>
+                        <outlet property="pickerView" destination="fUk-ZJ-yf4" id="tQj-Zm-50L"/>
+                        <outlet property="popUp" destination="gfC-GE-nFo" id="KvC-Mv-2WL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="gfC-GE-nFo">
+                    <rect key="frame" x="0.0" y="0.0" width="279" height="349"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <pickerView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="fUk-ZJ-yf4">
+                            <rect key="frame" x="17" y="20" width="246" height="216"/>
+                            <color key="backgroundColor" red="0.81523060800000002" green="0.82725471260000005" blue="0.84380751850000002" alpha="0.22177333047945205" colorSpace="custom" customColorSpace="sRGB"/>
+                        </pickerView>
+                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRG-Ja-Mfj">
+                            <rect key="frame" x="91" y="253" width="97" height="96"/>
+                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                            <state key="normal" backgroundImage="pokeball">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="selectPokemonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7F0-kl-NDM"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="dRG-Ja-Mfj" firstAttribute="top" secondItem="fUk-ZJ-yf4" secondAttribute="bottom" constant="17" id="NQa-Zt-lXe"/>
+                        <constraint firstAttribute="bottom" secondItem="dRG-Ja-Mfj" secondAttribute="bottom" id="Wx2-Br-K0Z"/>
+                        <constraint firstItem="fUk-ZJ-yf4" firstAttribute="leading" secondItem="gfC-GE-nFo" secondAttribute="leading" constant="17" id="aCG-6F-Hdv"/>
+                        <constraint firstItem="fUk-ZJ-yf4" firstAttribute="top" secondItem="gfC-GE-nFo" secondAttribute="top" constant="20" id="aKD-EW-WC5"/>
+                        <constraint firstItem="dRG-Ja-Mfj" firstAttribute="centerX" secondItem="gfC-GE-nFo" secondAttribute="centerX" id="hCA-aJ-fl6"/>
+                        <constraint firstAttribute="trailing" secondItem="fUk-ZJ-yf4" secondAttribute="trailing" constant="16" id="n92-GG-3Ar"/>
+                    </constraints>
+                </view>
             </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pokeball" width="97" height="96"/>
+    </resources>
 </document>
